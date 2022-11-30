@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_int.c                                   :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 19:54:30 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/08 17:27:44 by nadel-be         ###   ########.fr       */
+/*   Created: 2022/10/31 15:57:49 by nadel-be          #+#    #+#             */
+/*   Updated: 2022/11/30 13:08:39 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
-int	ft_convert_int(va_list args)
+int	ft_printf(const char *str, ...)
 {
-	long long	res;
+	va_list	args;
+	int		nb_char;
+	int		i;
 
-	res = va_arg(args, int);
-	if (res < 0)
+	nb_char = 0;
+	i = 0;
+	va_start(args, str);
+	while (str[i])
 	{
-		ft_putchar_fd('-', 1);
-		ft_putnbr_fd(res * -1, 1);
-		return (ft_intlen(res * -1) + 1);
+		if (str[i] == '%')
+		{
+			nb_char += ft_parse((char)str[i + 1], args);
+			i += 2;
+		}
+		else
+		{
+			ft_putchar_fd((char)str[i], 1);
+			i++;
+			nb_char++;
+		}
 	}
-	else
-	{
-		ft_putnbr_fd(res, 1);
-		return (ft_intlen(res));
-	}
+	va_end(args);
+	return (nb_char);
 }

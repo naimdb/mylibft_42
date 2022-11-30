@@ -6,11 +6,11 @@
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:56:34 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/08 19:14:45 by nadel-be         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:08:36 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
 
 int	ft_nb_convert(char c)
 {

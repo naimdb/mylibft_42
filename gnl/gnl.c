@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:18:00 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/29 14:48:03 by nadel-be         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:56:46 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../libft.h"
 
 void	*cut_stock(char *stock)
 {
@@ -67,7 +67,7 @@ char	*read_to_buf_to_stock(int fd, char *stock)
 	ssize_t		value;
 
 	value = 1;
-	while (value != 0 && !ft_strchr(stock, '\n'))
+	while (value != 0 && !ft_strchr_gnl(stock, '\n'))
 	{
 		value = read(fd, buf, BUFFER_SIZE);
 		if (value == -1)
@@ -76,7 +76,7 @@ char	*read_to_buf_to_stock(int fd, char *stock)
 			return (NULL);
 		}
 		buf[value] = '\0';
-		stock = ft_strjoin(stock, buf);
+		stock = ft_strjoin_gnl(stock, buf);
 	}
 	return (stock);
 }

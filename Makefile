@@ -6,7 +6,7 @@
 #    By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 15:15:55 by nadel-be          #+#    #+#              #
-#    Updated: 2022/11/04 17:16:23 by nadel-be         ###   ########.fr        #
+#    Updated: 2022/11/30 13:07:11 by nadel-be         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,57 +89,69 @@ On_IWhi	= \033[0;107m
 # **************************************************************************** #
 #                                   SOURCES                                    #
 # **************************************************************************** #
-SRCS =					\
-	ft_atoi.c			\
+SRCS =						\
+	gnl/gnl_utils.c			\
+	gnl/gnl.c				\
+	int/ft_intlen.c			\
+	int/ft_intlen_base.c	\
+	is/ft_isalnum.c			\
+	is/ft_isalpha.c			\
+	is/ft_isascii.c			\
+	is/ft_isdigit.c			\
+	is/ft_isprint.c			\
+	lst/ft_lstadd_back.c	\
+	lst/ft_lstadd_front.c	\
+	lst/ft_lstclear.c		\
+	lst/ft_lstdelone.c		\
+	lst/ft_lstiter.c		\
+	lst/ft_lstlast.c		\
+	lst/ft_lstmap.c			\
+	lst/ft_lstnew.c			\
+	lst/ft_lstsize.c		\
+	mem/ft_memccpy.c		\
+	mem/ft_memchr.c			\
+	mem/ft_memcmp.c			\
+	mem/ft_memcpy.c			\
+	mem/ft_memmove.c		\
+	mem/ft_memset.c			\
+	printf/ft_convert_cent.c		\
+	printf/ft_convert_char.c		\
+	printf/ft_convert_hexa_lower.c	\
+	printf/ft_convert_hexa_upper.c	\
+	printf/ft_convert_int.c			\
+	printf/ft_convert_ptr.c			\
+	printf/ft_convert_str.c			\
+	printf/ft_convert_uint.c		\
+	printf/ft_parse.c				\
+	printf/ft_printf.c				\
+	put/ft_putchar_fd.c		\
+	put/ft_putendl_fd.c		\
+	put/ft_putnbr_base_fd.c	\
+	put/ft_putnbr_fd.c		\
+	put/ft_putstr_fd.c		\
 	ft_bzero.c			\
 	ft_calloc.c			\
-	ft_intlen.c			\
-	ft_intlen_base.c	\
-	ft_isalnum.c		\
-	ft_isalpha.c		\
-	ft_isascii.c		\
-	ft_isdigit.c		\
-	ft_isprint.c		\
-	ft_itoa.c			\
-	ft_lstadd_back.c	\
-	ft_lstadd_front.c	\
-	ft_lstclear.c		\
-	ft_lstdelone.c		\
-	ft_lstiter.c		\
-	ft_lstlast.c		\
-	ft_lstmap.c			\
-	ft_lstnew.c			\
-	ft_lstsize.c		\
-	ft_memccpy.c		\
-	ft_memchr.c			\
-	ft_memcmp.c			\
-	ft_memcpy.c			\
-	ft_memmove.c		\
-	ft_memset.c			\
-	ft_putchar_fd.c		\
-	ft_putendl_fd.c		\
-	ft_putnbr_base_fd.c	\
-	ft_putnbr_fd.c		\
-	ft_putstr_fd.c		\
-	ft_split.c			\
-	ft_strcat.c			\
-	ft_strchr.c			\
-	ft_strcmp.c			\
-	ft_strcpy.c			\
-	ft_strdup.c			\
-	ft_striteri.c		\
-	ft_strjoin.c		\
-	ft_strlcat.c		\
-	ft_strlcpy.c		\
-	ft_strlen.c			\
-	ft_strmapi.c		\
-	ft_strncmp.c		\
-	ft_strnstr.c		\
-	ft_strrchr.c		\
-	ft_strtrim.c		\
-	ft_substr.c			\
-	ft_tolower.c		\
-	ft_toupper.c		\
+	str/ft_split.c			\
+	str/ft_strcat.c			\
+	str/ft_strchr.c			\
+	str/ft_strcmp.c			\
+	str/ft_strcpy.c			\
+	str/ft_strdup.c			\
+	str/ft_striteri.c		\
+	str/ft_strjoin.c		\
+	str/ft_strlcat.c		\
+	str/ft_strlcpy.c		\
+	str/ft_strlen.c			\
+	str/ft_strmapi.c		\
+	str/ft_strncmp.c		\
+	str/ft_strnstr.c		\
+	str/ft_strrchr.c		\
+	str/ft_strtrim.c		\
+	str/ft_substr.c			\
+	to/ft_atoi.c			\
+	to/ft_itoa.c			\
+	to/ft_tolower.c			\
+	to/ft_toupper.c			\
 
 # **************************************************************************** #
 #                                  VARIABLES                                   #

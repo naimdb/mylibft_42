@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_hexa_lower.c                            :+:      :+:    :+:   */
+/*   ft_convert_ptr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 20:29:57 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/08 20:08:21 by nadel-be         ###   ########.fr       */
+/*   Created: 2022/11/02 14:11:20 by nadel-be          #+#    #+#             */
+/*   Updated: 2022/11/30 13:08:09 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
-int	ft_convert_hexa_lower(va_list args)
+int	ft_convert_ptr(va_list args)
 {
 	unsigned long long	res;
-	unsigned int		hexa;
+	void				*ptr;
 
-	hexa = va_arg(args, unsigned int);
-	res = hexa;
-	if (!hexa)
+	ptr = va_arg(args, void *);
+	res = (unsigned long long)ptr;
+	if (!ptr)
 	{
-		ft_putchar_fd('0', 1);
-		return (1);
+		ft_putstr_fd("0x0", 1);
+		return (3);
 	}
+	ft_putstr_fd("0x", 1);
 	ft_putnbr_base_fd(res, "0123456789abcdef", 1);
-	return (ft_intlen_base(res, "0123456789abcdef"));
+	return (ft_intlen_base(res, "0123456789abcdef") + 2);
 }

@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_char.c                                  :+:      :+:    :+:   */
+/*   ft_convert_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 18:39:22 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/08 16:09:27 by nadel-be         ###   ########.fr       */
+/*   Created: 2022/11/01 19:54:30 by nadel-be          #+#    #+#             */
+/*   Updated: 2022/11/30 13:07:58 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
-int	ft_convert_char(va_list args)
+int	ft_convert_int(va_list args)
 {
-	ft_putchar_fd(va_arg(args, int), 1);
-	return (1);
+	long long	res;
+
+	res = va_arg(args, int);
+	if (res < 0)
+	{
+		ft_putchar_fd('-', 1);
+		ft_putnbr_fd(res * -1, 1);
+		return (ft_intlen(res * -1) + 1);
+	}
+	else
+	{
+		ft_putnbr_fd(res, 1);
+		return (ft_intlen(res));
+	}
 }

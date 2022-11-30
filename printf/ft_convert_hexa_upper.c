@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_convert_hexa_upper.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 15:57:49 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/08 16:17:49 by nadel-be         ###   ########.fr       */
+/*   Created: 2022/11/01 20:33:03 by nadel-be          #+#    #+#             */
+/*   Updated: 2022/11/30 13:07:54 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_convert_hexa_upper(va_list args)
 {
-	va_list	args;
-	int		nb_char;
-	int		i;
+	unsigned long long	res;
+	unsigned int		hexa;
 
-	nb_char = 0;
-	i = 0;
-	va_start(args, str);
-	while (str[i])
+	hexa = va_arg(args, unsigned int);
+	res = hexa;
+	if (!hexa)
 	{
-		if (str[i] == '%')
-		{
-			nb_char += ft_parse((char)str[i + 1], args);
-			i += 2;
-		}
-		else
-		{
-			ft_putchar_fd((char)str[i], 1);
-			i++;
-			nb_char++;
-		}
+		ft_putchar_fd('0', 1);
+		return (1);
 	}
-	va_end(args);
-	return (nb_char);
+	ft_putnbr_base_fd(res, "0123456789ABCDEF", 1);
+	return (ft_intlen_base(res, "0123456789ABCDEF"));
 }

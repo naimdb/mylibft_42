@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_str.c                                   :+:      :+:    :+:   */
+/*   ft_convert_cent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 19:53:15 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/11/09 15:42:04 by nadel-be         ###   ########.fr       */
+/*   Created: 2022/11/01 18:39:22 by nadel-be          #+#    #+#             */
+/*   Updated: 2022/11/30 13:07:43 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
-int	ft_convert_str(va_list args)
+int	ft_convert_cent(va_list args)
 {
-	char	*tmp;
-
-	tmp = va_arg(args, char *);
-	if (!tmp)
-	{
-		ft_putstr_fd("(null)", 1);
-		return (6);
-	}
-	ft_putstr_fd(tmp, 1);
-	return (ft_strlen(tmp));
+	(void)args;
+	ft_putchar_fd('%', 1);
+	return (1);
 }
