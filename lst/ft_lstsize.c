@@ -6,11 +6,11 @@
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:14:29 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/10/19 15:46:23 by nadel-be         ###   ########.fr       */
+/*   Updated: 2022/12/06 13:36:35 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

@@ -6,11 +6,11 @@
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:51:12 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/10/21 17:47:40 by nadel-be         ###   ########.fr       */
+/*   Updated: 2022/12/06 13:36:29 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

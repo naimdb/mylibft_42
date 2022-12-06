@@ -6,11 +6,11 @@
 /*   By: nadel-be <nadel-be@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:15:19 by nadel-be          #+#    #+#             */
-/*   Updated: 2022/10/19 14:27:57 by nadel-be         ###   ########.fr       */
+/*   Updated: 2022/12/06 13:36:13 by nadel-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
